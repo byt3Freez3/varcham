@@ -38,3 +38,4 @@ npm run build
 5. **Payments & Logistics**: Deploy Supabase Edge Functions (`create-order`, `razorpay-webhook`, `check-pincode`, `create-shipment`, `invoice-pdf`) with Razorpay, Shiprocket, and Resend.
 6. **Deploy**: Connect repo to Netlify (`npm run build`, publish `dist`) and configure custom domain `varcham.in`.
 
+"# varcham" 
