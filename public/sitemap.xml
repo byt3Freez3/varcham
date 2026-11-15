@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Store Pages -->
+  <url>
+    <loc>https://varcham.in/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/shop</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/festivals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/gifting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Collections -->
+  <url><loc>https://varcham.in/collections/puja-samagri</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/agarbatti-dhoop</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/attars-sacred-waters</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/diyas-lighting</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/brass-marble</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/sandalwood-malas-stones</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/festive-decor-aasan</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/collections/herbaa-wellness</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Quick Links 9-Page Set -->
+  <url>
+    <loc>https://varcham.in/our-story</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/policies/shipping</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/policies/returns</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/policies/cancellation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/policies/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/policies/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/track</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/journal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://varcham.in/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Journal Articles -->
+  <url><loc>https://varcham.in/journal/how-to-set-up-an-akhand-diya</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://varcham.in/journal/karwa-chauth-thali-checklist</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://varcham.in/journal/choosing-an-attar-floral-woody-fresh-musky</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://varcham.in/journal/caring-for-brass-and-marble-puja-articles</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://varcham.in/journal/griha-pravesh-the-complete-samagri-list</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://varcham.in/journal/why-bhimseni-kapur-is-different</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Store Information & FAQ -->
+  <url><loc>https://varcham.in/visit</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://varcham.in/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

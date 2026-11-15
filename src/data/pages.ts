@@ -1,0 +1,408 @@
+import { STORE_INFO } from './store';
+
+export const STORE_CONTACT = {
+  name: 'Varcham India',
+  tagline: 'Rooted in Faith, Inspired by Divine',
+  address: 'P-79 Swami Swarupananda Sarani, behind VIP Market, near Phoolbagan PS, Kolkata 700054, West Bengal',
+  addressLine1: 'P-79 Swami Swarupananda Sarani',
+  landmark: 'Behind VIP Market, near Phoolbagan PS',
+  cityStatePin: 'Kolkata 700054, West Bengal',
+  city: 'Kolkata',
+  state: 'West Bengal',
+  pincode: '700054',
+  phone: '+91 90079 96100',
+  phoneHref: 'tel:+919007996100',
+  whatsapp: '+91 90079 96100',
+  whatsappUrl: 'https://wa.me/919007996100?text=Namaste%20Varcham%20India%2C%20I%20have%20a%20question.',
+  email: 'varchamindia@gmail.com',
+  hours: 'Mon–Sat 10:00 AM–8:30 PM, Sunday 10:00 AM–2:00 PM',
+  hoursNote: '(TODO: Confirm Sunday hours)',
+  gstin: 'GSTIN: TO BE ADDED',
+  mapEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.0768407421977!2d88.3887012!3d22.5762397!2m3!1f0!2f0!3f0!3m2!1i1024!2f768!4f13.1!3m3!1m2!1s0x3a02766324b94f1b%3A0x6e360b940989f6b2!2sVIP%20Market%2C%20Kankurgachi%2C%20Kolkata%2C%20West%20Bengal%20700054!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+  socials: {
+    instagram: 'https://instagram.com/varchamindia',
+    facebook: 'https://facebook.com/varchamindia',
+    youtube: 'https://youtube.com/@varchamindia',
+  },
+};
+
+export const OUR_STORY_PAGE = {
+  hero: {
+    eyebrow: 'ABOUT VARCHAM',
+    title: 'Our Story',
+    subline:
+      'From a neighbourhood shop in Phoolbagan to a mandir-ready store for every home — the journey of Varcham India.',
+  },
+  promise: {
+    eyebrow: 'THE VARCHAM PROMISE',
+    title: 'Rooted in Faith, Crafted for the Mandir',
+    paragraphs: [
+      'Every festival in a Kolkata home begins with the same ritual: a handwritten list on ruled paper, three stops across crowded lanes, and the quiet doubt of whether the camphor will burn clean or the sandalwood is genuine. Varcham — meaning spiritual lustre and radiance — was founded right behind VIP Market in Phoolbagan to solve that sacred search once and for all.',
+      'We curate 277+ authentic mandir essentials under one roof: unadulterated Bhimseni kapur, temple-grade agarbatti, roll-on attars steam-distilled without a drop of alcohol, dense Rakta Chandan japa malas that sink in water, hand-carved Makrana marble diyas, and solid heirloom brassware. Whether you need a ₹20 packet of unbroken akshat or an heirloom hand-carved mandir vigrah, every single article is prepared with equal devotion.',
+      'Our written Purity Promise is simple: transparent weights, zero synthetic chemicals or alcohol, and honest craftsmanship from master karigars across India. We inspect every festival kit by hand before dispatch, ensuring nothing is missing when you light the lamp for your family.',
+    ],
+    image: '/images/store-kolkata.jpg',
+    imageAlt: 'Varcham India flagship store in Phoolbagan, Kolkata',
+  },
+  stats: [
+    {
+      value: '277+',
+      label: 'Items under one roof',
+      detail: 'From ₹20 daily samagri to heirloom brassware',
+    },
+    {
+      value: '8',
+      label: 'Collections',
+      detail: 'Pure samagri, attars, malas, brass, and festival kits',
+    },
+    {
+      value: '1 Store',
+      label: 'In Kolkata · Same-day delivery',
+      detail: 'Phoolbagan flagship store + express local dispatch',
+    },
+  ],
+  guides: [
+    {
+      title: 'Purity first',
+      text: 'Every grain of unbroken akshat, drop of natural attar, and tablet of pure Bhimseni kapur is rigorously vetted for ritual sanctity.',
+    },
+    {
+      title: 'Complete rituals',
+      text: 'Purohit-verified festival kits and samagri checklists mean your family never has to worry about forgotten items mid-puja.',
+    },
+    {
+      title: 'A real store you can visit',
+      text: 'We are not a faceless cloud warehouse. Step into our Phoolbagan boutique, smell the attars, examine the brass, or collect online orders free.',
+    },
+  ],
+  whyShop: [
+    {
+      title: 'Authentic & pure samagri',
+      text: 'Zero synthetic additives, chemical binders, or alcohol. Only genuine sacred ingredients sourced at the origin.',
+      iconColor: 'gold',
+    },
+    {
+      title: 'Festival kits, complete in one click',
+      text: 'Every required item pre-selected by Vedic priests, with the unique option to untick items you already own at home.',
+      iconColor: 'tulsi',
+    },
+    {
+      title: 'Same-day delivery in Kolkata',
+      text: 'Order before 2:00 PM across Kolkata 700xxx pincodes for doorstep delivery before evening aarti.',
+      iconColor: 'gold',
+    },
+    {
+      title: 'UPI, cards & Cash on Delivery',
+      text: 'Pay via Google Pay, PhonePe, credit/debit cards, net banking, or pay cash upon receipt at your doorstep.',
+      iconColor: 'tulsi',
+    },
+    {
+      title: 'Free replacement for damaged items',
+      text: 'Handcrafted brass, marble, and clay items double-boxed. If anything arrives chipped, we replace it free without hassle.',
+      iconColor: 'gold',
+    },
+    {
+      title: 'Help on WhatsApp Mon–Sat',
+      text: 'Connect directly with our Phoolbagan store team for ritual recommendations, custom hamper quotes, and order status.',
+      iconColor: 'tulsi',
+    },
+  ],
+  cta: {
+    title: 'Ready for your next puja?',
+    subline: 'Explore our complete catalog of authentic samagri and heirloom articles.',
+    buttonText: 'Shop Puja Essentials',
+    buttonLink: '/shop',
+  },
+};
+
+export const SHIPPING_POLICY = {
+  hero: {
+    eyebrow: 'POLICY',
+    title: 'Shipping & Delivery Policy',
+    subline: 'Transparent timelines, safe packing, and same-day delivery in Kolkata.',
+  },
+  lastUpdated: 'November 10, 2026',
+  intro:
+    'At Varcham India, we recognise that puja samagri and festive articles are time-sensitive blessings for your household. Every order is inspected, cushioned in biodegradable honeycomb wrap, and dispatched with great care from our Phoolbagan store in Kolkata.',
+  deliveryTimeBullets: [
+    'Order Dispatch: All confirmed orders are packed and dispatched within 24 working hours.',
+    'Kolkata Same-Day Delivery: Orders placed before 2:00 PM IST (Mon–Sat) across Kolkata 700xxx pincodes are hand-delivered the same evening before 8:30 PM.',
+    'Rest of India Delivery: Dispatched via express air/surface couriers (Blue Dart, Delhivery, DTDC) and delivered within 3–6 working days.',
+    'Free Store Pickup: Ready for collection within 2 hours at our Phoolbagan boutique between 10:00 AM and 8:30 PM.',
+  ],
+  timingNote:
+    'Delivery timelines may extend by 1–2 days during peak festival periods (Navratri, Durga Puja, Karwa Chauth, and Diwali) and for remote or non-metro pin codes. We strongly recommend ordering festival kits at least 5 days in advance.',
+  charges: [
+    {
+      method: 'Store Pickup',
+      fee: 'Free',
+      condition: 'No minimum order required',
+      timeline: 'Ready in 2 hours at Phoolbagan store',
+    },
+    {
+      method: 'Kolkata Same-Day',
+      fee: `₹${STORE_INFO.kolkataShippingFee}`,
+      condition: `Free on orders above ₹${STORE_INFO.freeKolkataThreshold}`,
+      timeline: 'Same evening (orders before 2:00 PM)',
+    },
+    {
+      method: 'Standard Pan-India',
+      fee: `₹${STORE_INFO.panIndiaShippingFee}`,
+      condition: `Free on orders above ₹${STORE_INFO.freeIndiaThreshold}`,
+      timeline: '3–6 working days express transit',
+    },
+  ],
+  fragileHeading: 'Fragile items & sacred packaging',
+  fragileText:
+    'Heirloom brass idols, Makrana marble diyas, glass akhand chimneys, and terracotta kalash are protected with high-density foam, double-walled corrugated cartons, and fragile warning labels. Please inspect fragile packages upon receipt and, whenever practical, open them in front of the delivery executive.',
+  uncontrollableHeading: "What we can't control",
+  uncontrollableText:
+    'We do not process dispatches on Sundays and national public holidays. While we partner with top-tier courier networks, rare transit delays caused by extreme weather, floods, flight groundings, civic disruptions, or regional transport strikes remain beyond our direct control. In every case, our team tracks the shipment actively until safely received.',
+};
+
+export const RETURNS_POLICY = {
+  hero: {
+    eyebrow: 'POLICY',
+    title: 'Returns, Exchange & Refund Policy',
+    subline: 'Hassle-free replacement for transit damage and clear guidelines on sacred consumables.',
+  },
+  lastUpdated: 'November 10, 2026',
+  intro:
+    'We hold ourselves to the highest standards of ritual purity and craft excellence. Returns and replacements are accepted strictly for items received in a Damaged, Defective, or Not as Described condition. Please report any transit issues within 5 days of delivery with an unboxing photograph or short video via WhatsApp (+91 90079 96100) or email (varchamindia@gmail.com).',
+  sanctityNote:
+    'For reasons of sacred sanctity and hygiene, opened or unsealed consumables (pure kapur, sindoor, roli, unbroken akshat, agarbatti, cow ghee, attars, sacred waters, and havan samagri) as well as any article already placed in a puja altar cannot be returned or refunded. Festival kits and festive clearance items are eligible for exchange only.',
+  cannotAcceptHeading: 'We cannot accept returns when',
+  cannotAcceptBullets: [
+    'The return or damage request is raised after 5 calendar days from the date of recorded delivery.',
+    'Original packaging, safety seals, tags, or protective boxes are missing, tampered with, or discarded.',
+    'Damage has occurred due to mishandling, improper storage, or accidental drops after successful delivery.',
+    'The sacred item has already been consecrated, lit, anointed, or used in a religious ceremony.',
+  ],
+  partialReturnsHeading: 'Partial returns',
+  partialReturnsText:
+    'If your order contains multiple articles, you may request a return or replacement for an individual eligible item without returning the entire package. Partial returns are permitted once per order ID.',
+  reversePickupHeading: 'Reverse pickup',
+  reversePickupText:
+    'For serviceable pincodes, our courier partner will schedule a reverse pickup within 24 working hours of return authorization. Please pack the item securely in its original protective carton and tape all edges. A nominal reverse pickup fee may be deducted from the refund unless the return was necessitated by our error or documented transit damage.',
+  selfShipHeading: 'Self-ship instructions',
+  selfShipText:
+    'If reverse pickup is unavailable at your pincode, you may dispatch the package via any reputable, trackable courier to our store address:',
+  refundsHeading: 'Refund processing & timelines',
+  refundsBullets: [
+    'Prepaid Orders: Once inspected and approved at our facility, refunds are initiated to the original payment method (Credit Card, Debit Card, Net Banking, or UPI) within 5–7 working days.',
+    'Cash on Delivery (COD) Orders: Refunds are processed via UPI ID or direct NEFT bank transfer within 7–10 working days after receiving your verified account details.',
+    'Original shipping charges and COD convenience fees are non-refundable.',
+    'An automated confirmation email and SMS with the transaction reference will be sent upon refund completion.',
+    'For escalation on pending refunds, please email varchamindia@gmail.com quoting your Order ID.',
+  ],
+};
+
+export const CANCELLATION_POLICY = {
+  hero: {
+    eyebrow: 'POLICY',
+    title: 'Cancellation Policy',
+    subline: 'Straightforward rules for cancelling orders before dispatch.',
+  },
+  lastUpdated: 'November 10, 2026',
+  intro:
+    'We begin preparing your orders promptly so that sacred essentials reach your home without delay. Please review our simple cancellation terms below:',
+  bullets: [
+    'Standard Orders: You may cancel your order free of charge at any time before it has been packed or dispatched from our facility.',
+    'Kolkata Same-Day Orders: Because local express dispatches are assigned immediately, same-day orders must be cancelled within 30 minutes of placement.',
+    'How to Cancel: Log in to your account and select Account › Orders, or WhatsApp us at +91 90079 96100 with your Order ID and cancellation reason.',
+    'Post-Dispatch: Once an order has been handed over to the courier partner, it cannot be cancelled. In such cases, you may accept delivery and request a return under our Returns Policy if applicable.',
+    'Refund Processing: For prepaid orders cancelled prior to dispatch, the full transaction amount will be credited back to your original payment source within 5–7 working days.',
+  ],
+};
+
+export const PRIVACY_POLICY = {
+  hero: {
+    eyebrow: 'POLICY',
+    title: 'Privacy Policy',
+    subline: 'How Varcham India protects, respects, and handles your personal information.',
+  },
+  lastUpdated: 'November 10, 2026',
+  intro:
+    'Varcham India ("we", "our", or "us") is committed to respecting your privacy and safeguarding your personal information. This Privacy Policy outlines our data handling practices in plain language, demonstrating our commitment to the principles of the Digital Personal Data Protection Act, 2023 (DPDP Act) and applicable Indian information technology laws.',
+  sections: [
+    {
+      title: '1. What information we collect',
+      bullets: [
+        'Contact Details: Your full name, mobile telephone number, email address, and billing/shipping addresses.',
+        'Order & Transaction Records: Items purchased, festival preferences, payment reference IDs, and customer service history.',
+        'Device & Technical Information: IP address, browser type, device identifiers, and pages visited, gathered through standard session cookies and analytics tools.',
+      ],
+    },
+    {
+      title: '2. Why we collect your information',
+      bullets: [
+        'To process, securely pack, and deliver your puja essentials and festival kits.',
+        'To send transactional updates, shipping tracking links, and digital GST invoices.',
+        'To offer optional festival reminder alerts and puja checklists that you explicitly opt into.',
+        'To enhance website security, resolve bugs, and improve the user experience across desktop and mobile.',
+      ],
+    },
+    {
+      title: '3. WhatsApp & SMS communication consent',
+      bullets: [
+        'We send essential order confirmations and live delivery milestones via SMS or WhatsApp for your convenience.',
+        'Marketing messages, festive greetings, and discount codes are sent only if you have voluntarily subscribed to our newsletter or opted in during checkout.',
+        'You can opt out of non-transactional marketing messages at any time by replying STOP on WhatsApp or emailing us at varchamindia@gmail.com.',
+      ],
+    },
+    {
+      title: '4. Cookies & site analytics',
+      bullets: [
+        'We use standard analytics services (Google Analytics 4, Meta Pixel, and Microsoft Clarity) to understand aggregate browsing trends and page loading speed.',
+        'No sensitive personal or financial information is shared with analytics partners.',
+        'You can disable or delete cookies via your browser settings at any time without losing the ability to browse our catalog.',
+      ],
+    },
+    {
+      title: '5. Payment security with Razorpay',
+      bullets: [
+        'All digital payments on varcham.in are securely processed through Razorpay, a PCI-DSS Level 1 certified payment gateway.',
+        'Varcham India never collects, stores, or processes your credit card numbers, debit card CVVs, UPI PINs, or net banking passwords on our servers.',
+      ],
+    },
+    {
+      title: '6. Information sharing with delivery partners',
+      bullets: [
+        'We share your name, phone number, and delivery address solely with our authorized courier partners (e.g. Blue Dart, Delhivery, DTDC, and local store delivery riders) strictly to fulfill doorstep delivery.',
+        'We never sell, rent, trade, or monetize your personal information to third-party marketing companies.',
+      ],
+    },
+    {
+      title: '7. Data retention & your rights',
+      bullets: [
+        'We retain your account and transaction data only as long as necessary to fulfill orders and meet statutory tax and accounting obligations under Indian law.',
+        'Under the DPDP Act 2023, you have the right to request access to the personal data we hold, request corrections to inaccurate information, or request deletion of your account.',
+        'To exercise these rights, please write to our support desk at varchamindia@gmail.com.',
+      ],
+    },
+    {
+      title: '8. Minors & children',
+      bullets: [
+        'Our online services are intended for adults. We do not knowingly collect personal information from individuals under 18 years of age without parental supervision.',
+      ],
+    },
+    {
+      title: '9. Grievance officer',
+      bullets: [
+        'In accordance with the Information Technology Act 2000 and DPDP Act 2023, for any privacy queries or complaints, please contact our designated Grievance Officer:',
+        'Name: Grievance Officer, Varcham India',
+        'Address: P-79 Swami Swarupananda Sarani, behind VIP Market, near Phoolbagan PS, Kolkata 700054, West Bengal',
+        'Email: varchamindia@gmail.com',
+      ],
+    },
+  ],
+};
+
+export const TERMS_OF_SERVICE = {
+  hero: {
+    eyebrow: 'POLICY',
+    title: 'Terms of Service',
+    subline: 'Clear, fair terms governing your use of the Varcham India store and website.',
+  },
+  lastUpdated: 'November 10, 2026',
+  intro:
+    'Welcome to Varcham India. By accessing, browsing, or placing an order on our website (varcham.in), you acknowledge and agree to be bound by the following Terms of Service. Please read them carefully before making a purchase.',
+  sections: [
+    {
+      title: '1. Who we are',
+      bullets: [
+        'Varcham India operates a sacred retail boutique and online store based in Kolkata, West Bengal.',
+        'Registered Address: P-79 Swami Swarupananda Sarani, behind VIP Market, near Phoolbagan PS, Kolkata 700054, West Bengal.',
+        'GSTIN: GSTIN: TO BE ADDED.',
+        'Contact Desk: +91 90079 96100 | varchamindia@gmail.com.',
+      ],
+    },
+    {
+      title: '2. Use of website & eligibility',
+      bullets: [
+        'You must be at least 18 years of age or using the site under the supervision of a parent or guardian to make purchases.',
+        'You agree to provide accurate, current, and complete contact and shipping details for order fulfillment.',
+        'Unauthorised attempts to probe site security, scrape catalog data, or transmit harmful code are strictly prohibited.',
+      ],
+    },
+    {
+      title: '3. Products, pricing & natural craft variations',
+      bullets: [
+        'All prices are listed in Indian Rupees (INR) and are inclusive of applicable Goods and Services Tax (GST).',
+        'Artisanal Variation: Our brass articles are hand-cast by traditional karigars, and marble items are carved from natural Makrana stone. Subtle variations in metal patina, carving details, marble grain, or sandalwood shade are intrinsic to handcrafted religious crafts and not defects.',
+        'Photographic Representation: While we take studio photographs in true lighting, actual shades may vary slightly based on display settings and natural materials.',
+        'We reserve the right to correct any inadvertent typographical or pricing errors and cancel affected unfulfilled orders with a prompt full refund.',
+      ],
+    },
+    {
+      title: '4. Orders & order acceptance',
+      bullets: [
+        'Your receipt of an electronic order confirmation does not signify our final acceptance. We reserve the right to accept, decline, or limit order quantities at any time prior to dispatch.',
+        'In the unlikely event that an ordered article is unavailable or fails pre-dispatch purity inspection, we will notify you and process a full refund immediately.',
+      ],
+    },
+    {
+      title: '5. Payment terms',
+      bullets: [
+        'Digital payments are secured via Razorpay. We accept UPI, major credit/debit cards, and net banking.',
+        'Cash on Delivery (COD) may carry a nominal convenience handling fee of ₹49 where applicable.',
+      ],
+    },
+    {
+      title: '6. Delivery & shipping',
+      bullets: [
+        'Shipping terms, timelines, and charges are detailed in our Shipping & Delivery Policy, which is incorporated into these Terms.',
+        'The customer is responsible for providing complete and accurate address information including pincode and landmark.',
+      ],
+    },
+    {
+      title: '7. Returns, replacement & cancellation',
+      bullets: [
+        'All returns, transit damage claims, and order cancellations are governed by our official Returns Policy and Cancellation Policy.',
+        'Opened sacred consumables and articles used in worship cannot be returned.',
+      ],
+    },
+    {
+      title: '8. Coupons & festival kit discounts',
+      bullets: [
+        'Promotional coupon codes (such as SHUBH10) are valid for single-order redemption per user and cannot be combined with custom corporate quotations.',
+        'Discounts carry no cash surrender value and cannot be exchanged for monetary credit.',
+      ],
+    },
+    {
+      title: '9. Intellectual property',
+      bullets: [
+        'All logos, brand names, product photographs, ritual guides, copy, and visual design on this site are the exclusive intellectual property of Varcham India.',
+        'Reproduction, copying, or redistribution for commercial purposes without prior written permission is strictly prohibited.',
+      ],
+    },
+    {
+      title: '10. Reviews & user submissions',
+      bullets: [
+        'Any reviews, comments, or photos submitted to Varcham India grant us a royalty-free license to display them for customer guidance.',
+        'We reserve the right to moderate or remove reviews containing profane, defamatory, or unrelated content.',
+      ],
+    },
+    {
+      title: '11. Limitation of liability',
+      bullets: [
+        'To the maximum extent permitted by Indian law, Varcham India shall not be liable for any indirect, incidental, or consequential damages arising from the use of products or the website.',
+        'Our maximum cumulative liability for any verified claim shall not exceed the amount actually paid by you for the specific item in dispute.',
+      ],
+    },
+    {
+      title: '12. Governing law & jurisdiction',
+      bullets: [
+        'These Terms of Service shall be governed by and construed in accordance with the laws of the Republic of India.',
+        'Any legal disputes or proceedings arising out of or related to these terms shall be subject to the exclusive jurisdiction of the competent courts in Kolkata, West Bengal.',
+      ],
+    },
+    {
+      title: '13. Contact & legal notices',
+      bullets: [
+        'For queries regarding these Terms of Service, please write to varchamindia@gmail.com or visit our store at P-79 Swami Swarupananda Sarani, Kolkata 700054.',
+      ],
+    },
+  ],
+};
