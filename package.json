@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && python ./scripts/package-hostinger.py",
+    "build:hostinger": "tsc -b && vite build && python ./scripts/package-hostinger.py",
     "lint": "eslint .",
     "preview": "vite preview"
   },
