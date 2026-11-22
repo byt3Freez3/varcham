@@ -123,11 +123,13 @@ export function BrandLogo({
   const isReversed = variant === 'reversed';
 
   return (
-    <div className={cn('inline-flex items-center gap-2.5 select-none', className)}>
+    <div className={cn('inline-flex items-center gap-2 md:gap-2.5 select-none', className)}>
       <DiyaTulsiMark
         className={cn(
           'transition-all duration-base ease-temple',
-          compact ? 'w-7 h-7' : 'w-8 h-8',
+          // Mobile: 28px (~1.35x visual focus). Desktop: 32px standard / 28px compact
+          'w-[28px] h-[28px]',
+          compact ? 'md:w-7 md:h-7' : 'md:w-8 md:h-8',
           isReversed ? 'text-gold-light' : 'text-gold'
         )}
       />
@@ -136,7 +138,9 @@ export function BrandLogo({
           lang="hi"
           className={cn(
             'font-hindi transition-all duration-base ease-temple',
-            compact ? 'text-[19px]' : 'text-[22px]',
+            // Mobile: 26px wordmark. Desktop: 22px / 19px compact
+            'text-[26px]',
+            compact ? 'md:text-[19px]' : 'md:text-[22px]',
             isReversed ? 'text-ivory' : 'text-tulsi'
           )}
         >
@@ -144,8 +148,10 @@ export function BrandLogo({
         </span>
         <span
           className={cn(
-            'font-cinzel font-semibold tracking-[0.3em] mt-0.5',
-            compact ? 'text-[9px]' : 'text-[10px]',
+            'font-cinzel font-semibold mt-0.5',
+            // Mobile: 11px tracking-[0.35em]. Desktop: 10px tracking-[0.3em] / 9px compact
+            'text-[11px] tracking-[0.35em]',
+            compact ? 'md:text-[9px] md:tracking-[0.3em]' : 'md:text-[10px] md:tracking-[0.3em]',
             isReversed ? 'text-gold-light' : 'text-gold'
           )}
         >
@@ -180,7 +186,7 @@ export function SectionHeader({
     >
       <p
         className={cn(
-          'font-cinzel text-[11px] md:text-xs font-semibold uppercase tracking-[0.3em] mb-2.5',
+          'font-cinzel text-[11px] md:text-xs font-semibold uppercase tracking-[0.3em] mb-1.5 md:mb-2.5',
           onDark ? 'text-gold-light' : 'text-gold'
         )}
       >
@@ -188,7 +194,7 @@ export function SectionHeader({
       </p>
       <h2
         className={cn(
-          'font-playfair text-[28px] leading-[1.28] md:text-[40px] md:leading-[1.2] font-normal',
+          'font-playfair text-[26px] leading-[32px] md:text-[40px] md:leading-[1.2] font-normal',
           onDark ? 'text-ivory' : 'text-espresso'
         )}
       >
@@ -196,7 +202,7 @@ export function SectionHeader({
       </h2>
       <div
         className={cn(
-          'mt-4 flex items-center gap-3',
+          'mt-2.5 md:mt-4 flex items-center gap-3',
           align === 'center' ? 'justify-center' : 'justify-start'
         )}
       >
@@ -213,7 +219,7 @@ export function SectionHeader({
       {subtitle && (
         <p
           className={cn(
-            'mt-4 text-[15px] md:text-base leading-relaxed',
+            'mt-2.5 md:mt-4 text-[14px] md:text-base leading-relaxed max-w-[32ch] md:max-w-none mx-auto',
             onDark ? 'text-ivory/85' : 'text-walnut'
           )}
         >

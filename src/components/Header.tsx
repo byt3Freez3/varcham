@@ -60,78 +60,82 @@ export function Header() {
           scrolled ? 'h-14 md:h-16 shadow-sm' : 'h-14 md:h-[88px]'
         )}
       >
-        <div className="container h-full flex items-center justify-between gap-4">
-          {/* Mobile left controls */}
-          <div className="flex items-center gap-1 md:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              aria-label="Open menu"
-              className="w-11 h-11 flex items-center justify-center text-espresso"
-            >
-              <Menu className="w-6 h-6 stroke-[1.6]" />
-            </button>
-          </div>
-
-          {/* Desktop left navigation */}
-          <nav aria-label="Primary" className="hidden md:flex items-center gap-6 lg:gap-7">
-            <div
-              className="relative"
-              onMouseEnter={handleMegaEnter}
-              onMouseLeave={handleMegaLeave}
-            >
+        <div className="container h-full flex items-center justify-between gap-2 md:gap-4">
+          {/* Mobile left controls + Desktop left navigation */}
+          <div className="flex-1 md:flex-initial flex items-center justify-start">
+            <div className="flex items-center gap-1 md:hidden">
               <button
                 type="button"
-                onClick={() => setMegaOpen((o) => !o)}
-                aria-expanded={megaOpen}
-                className="inline-flex items-center gap-1 py-2 text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
+                onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open menu"
+                className="w-11 h-11 flex items-center justify-center text-espresso"
               >
-                <span>{t('Shop', 'खरीदारी')}</span>
-                <ChevronDown
-                  className={cn(
-                    'w-3.5 h-3.5 text-gold transition-transform duration-fast',
-                    megaOpen && 'rotate-180'
-                  )}
-                />
+                <Menu className="w-6 h-6 stroke-[1.6]" />
               </button>
             </div>
-            <Link
-              to="/festivals"
-              className="text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
-            >
-              {t('Festivals', 'त्योहार')}
-            </Link>
-            <Link
-              to="/gifting"
-              className="text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
-            >
-              {t('Gifting', 'उपहार')}
-            </Link>
-            <Link
-              to="/our-story"
-              className="hidden lg:inline text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
-            >
-              {t('Our Story', 'हमारी कहानी')}
-            </Link>
-            <Link
-              to="/visit"
-              className="hidden lg:inline text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
-            >
-              {t('Visit Store', 'स्टोर')}
-            </Link>
-          </nav>
+
+            {/* Desktop left navigation */}
+            <nav aria-label="Primary" className="hidden md:flex items-center gap-6 lg:gap-7">
+              <div
+                className="relative"
+                onMouseEnter={handleMegaEnter}
+                onMouseLeave={handleMegaLeave}
+              >
+                <button
+                  type="button"
+                  onClick={() => setMegaOpen((o) => !o)}
+                  aria-expanded={megaOpen}
+                  className="inline-flex items-center gap-1 py-2 text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
+                >
+                  <span>{t('Shop', 'खरीदारी')}</span>
+                  <ChevronDown
+                    className={cn(
+                      'w-3.5 h-3.5 text-gold transition-transform duration-fast',
+                      megaOpen && 'rotate-180'
+                    )}
+                  />
+                </button>
+              </div>
+              <Link
+                to="/festivals"
+                className="text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
+              >
+                {t('Festivals', 'त्योहार')}
+              </Link>
+              <Link
+                to="/gifting"
+                className="text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
+              >
+                {t('Gifting', 'उपहार')}
+              </Link>
+              <Link
+                to="/our-story"
+                className="hidden lg:inline text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
+              >
+                {t('Our Story', 'हमारी कहानी')}
+              </Link>
+              <Link
+                to="/visit"
+                className="hidden lg:inline text-[13px] font-medium uppercase tracking-[0.08em] text-espresso hover:text-tulsi transition-colors"
+              >
+                {t('Visit Store', 'स्टोर')}
+              </Link>
+            </nav>
+          </div>
 
           {/* Centred Brand Logo */}
-          <Link
-            to="/"
-            aria-label="Varcham India home"
-            className="shrink-0 focus-visible:outline-none"
-          >
-            <BrandLogo compact={scrolled} />
-          </Link>
+          <div className="shrink-0 flex items-center justify-center">
+            <Link
+              to="/"
+              aria-label="Varcham India home"
+              className="focus-visible:outline-none"
+            >
+              <BrandLogo compact={scrolled} />
+            </Link>
+          </div>
 
           {/* Right action icons */}
-          <div className="flex items-center gap-0.5 md:gap-2">
+          <div className="flex-1 md:flex-initial flex items-center justify-end gap-0.5 md:gap-2">
             <button
               type="button"
               onClick={toggleLang}
@@ -149,7 +153,7 @@ export function Header() {
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search"
-              className="w-11 h-11 flex items-center justify-center text-espresso hover:text-tulsi transition-colors"
+              className="hidden min-[360px]:flex w-11 h-11 items-center justify-center text-espresso hover:text-tulsi transition-colors"
             >
               <Search className="w-5 h-5 stroke-[1.6]" />
             </button>

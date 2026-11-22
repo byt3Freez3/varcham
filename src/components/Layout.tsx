@@ -31,10 +31,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -5% 0px' }
     );
 
-    els.forEach((el) => observer.observe(el));
+    els.forEach((el) => {
+      // If already in or above viewport on initial load, reveal immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+
     return () => observer.disconnect();
   }, [pathname]);
 
@@ -62,4 +71,3 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-

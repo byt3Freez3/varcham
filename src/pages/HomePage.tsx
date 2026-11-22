@@ -32,6 +32,7 @@ import { Button } from '@/components/ui/button';
 import { BrandLogo, SectionHeader } from '@/components/BrandMark';
 import { ProductCard } from '@/components/ProductCard';
 import { ProductCardSkeleton } from '@/components/ui/skeleton';
+import { SHOW_TRUST_STRIP } from '@/config/home';
 import { GhantaGarland } from '@/components/GhantaGarland';
 
 const ATTAR_FAMILIES: Array<'All' | 'Floral' | 'Woody' | 'Fresh' | 'Musky'> = [
@@ -161,26 +162,65 @@ export function HomePage() {
         </script>
       </Helmet>
 
-      {/* 1. HERO with inset 1px antique gold frame + 6% faded watermark */}
-      <section className="relative bg-ivory overflow-hidden py-6 md:py-10">
-        <div className="relative mx-3 md:mx-6 border border-gold/45 rounded-sm bg-ivory paper-grain overflow-hidden">
-          {/* Watermark logo behind hero */}
+      {/* 1. HERO with inset antique gold frame + watermark */}
+      <section id="hero-section" className="relative bg-ivory overflow-hidden py-4 md:py-10">
+        <div className="relative mx-3 md:mx-6 border border-gold/45 rounded-sm bg-ivory paper-grain overflow-hidden p-2 md:p-3">
+          {/* Watermark logo behind hero desktop */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.06]"
+            className="pointer-events-none absolute inset-0 hidden lg:flex items-center justify-center opacity-[0.06]"
           >
-            <BrandLogo variant="stacked" className="scale-[2.2] md:scale-[3.2]" />
+            <BrandLogo variant="stacked" className="scale-[3.2]" />
           </div>
 
-          <div className="container relative z-10 py-10 md:py-16 lg:py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-              {/* Mobile Image First / Desktop Right */}
-              <div className="lg:col-span-5 lg:order-2 relative flex justify-center">
+          <div className="container relative z-10 pt-5 px-4 pb-7 md:py-16 lg:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+              {/* Copy (Mobile first order-1 / Desktop left order-1) */}
+              <div className="order-1 lg:order-1 lg:col-span-7 relative z-10 space-y-4 md:space-y-5 text-center lg:text-left">
+                {/* Mobile Watermark positioned behind copy text block only */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 diya-glow animate-diya-breathe scale-110 pointer-events-none"
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04] lg:hidden overflow-hidden -z-10"
+                >
+                  <BrandLogo variant="stacked" className="scale-[1.8] max-w-[260px]" />
+                </div>
+
+                <p className="font-cinzel text-[11px] md:text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                  NAMASTE · <span lang="hi">स्वागत है</span>
+                </p>
+
+                <h1 className="font-playfair text-[34px] leading-[40px] md:text-[56px] md:leading-[1.14] tracking-[-0.01em] text-espresso font-normal line-clamp-3 md:line-clamp-none">
+                  {t('Every ritual, complete and pure.', 'हर पूजा हो संपूर्ण और पवित्र।')}
+                </h1>
+
+                <p className="font-playfair italic text-[16px] md:text-[20px] text-tulsi">
+                  Rooted in Faith, Inspired by Divine
+                </p>
+
+                <p className="text-[15px] leading-[24px] md:text-[18px] md:leading-relaxed text-walnut max-w-[34ch] lg:max-w-xl mx-auto lg:mx-0">
+                  Puja samagri, sandalwood, attars and sacred brass &amp; marble — curated in Kolkata, delivered to your mandir.
+                </p>
+
+                <div
+                  id="hero-ctas"
+                  className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3"
+                >
+                  <Button asChild size="default" className="h-12 md:h-14 w-full sm:w-auto text-xs uppercase tracking-[0.08em] bg-tulsi text-ivory hover:bg-tulsi-hover">
+                    <Link to="/shop">Shop Puja Essentials</Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="default" className="h-12 md:h-14 w-full sm:w-auto text-xs uppercase tracking-[0.08em]">
+                    <Link to="/festivals">Find your festival kit</Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Image (Mobile below CTAs order-2 / Desktop right order-2) */}
+              <div className="order-2 lg:order-2 lg:col-span-5 relative flex justify-center mt-6 lg:mt-0">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 diya-glow animate-diya-breathe scale-105 pointer-events-none"
                 />
-                <div className="relative w-full max-w-[360px] md:max-w-[420px] aspect-[3/4] max-h-[68vh] arch-mask overflow-hidden border border-gold/40 bg-parchment shadow-card">
+                <div className="relative w-full max-w-[240px] lg:max-w-[420px] aspect-[4/5] lg:aspect-[3/4] max-h-[300px] lg:max-h-[68vh] mx-auto arch-mask overflow-hidden border border-gold/40 bg-parchment shadow-card">
                   <img
                     src="/images/hero-diya.jpg"
                     alt="Lit handcrafted antique brass diya on carved white marble chowki surrounded by marigolds"
@@ -188,86 +228,57 @@ export function HomePage() {
                   />
                 </div>
               </div>
-
-              {/* Copy */}
-              <div className="lg:col-span-7 lg:order-1 space-y-5 text-center lg:text-left">
-                <p className="font-cinzel text-[11px] md:text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  NAMASTE · <span lang="hi">स्वागत है</span>
-                </p>
-
-                <h1 className="font-playfair text-[36px] leading-[1.2] md:text-[56px] md:leading-[1.14] tracking-[-0.01em] text-espresso font-normal">
-                  {t('Every ritual, complete and pure.', 'हर पूजा हो संपूर्ण और पवित्र।')}
-                </h1>
-
-                <p className="font-playfair italic text-[17px] md:text-[20px] text-tulsi">
-                  Rooted in Faith, Inspired by Divine
-                </p>
-
-                <p className="text-[15px] md:text-[18px] leading-relaxed text-walnut max-w-xl mx-auto lg:mx-0">
-                  Puja samagri, sandalwood, attars and sacred brass &amp; marble — curated in Kolkata, delivered to your mandir.
-                </p>
-
-                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
-                  <Button asChild size="lg" className="w-full sm:w-auto">
-                    <Link to="/shop">Shop Puja Essentials</Link>
-                  </Button>
-                  <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
-                    <Link to="/festivals">Find your festival kit</Link>
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Slim decorative temple bell garland directly under hero */}
-      <GhantaGarland variant="hero" sound={false} />
-
-      {/* 2. TRUST STRIP */}
-      <section className="border-y border-hairline bg-parchment/50 py-7">
-        <div className="container grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              icon: ShieldCheck,
-              title: 'Authentic & Pure',
-              sub: 'Checked for purity in Kolkata',
-            },
-            {
-              icon: Store,
-              title: 'Visit Our Kolkata Store',
-              sub: 'P-79 Swami Swarupananda Sarani',
-            },
-            {
-              icon: CreditCard,
-              title: 'UPI & Cash on Delivery',
-              sub: 'Razorpay & transparent COD',
-            },
-            {
-              icon: Truck,
-              title: 'Same-day Kolkata Delivery',
-              sub: 'Order by 2 pm · Free ≥ ₹499',
-            },
-          ].map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.title} className="flex items-start gap-3">
-                <Icon className="w-7 h-7 text-gold stroke-[1.4] shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-semibold text-espresso leading-snug">{item.title}</p>
-                  <p className="text-xs text-walnut mt-0.5">{item.sub}</p>
+      {/* 2. TRUST STRIP (Desktop only; 0px height on mobile per brand spec) */}
+      {SHOW_TRUST_STRIP && (
+        <section className="hidden md:block border-y border-hairline bg-parchment/50 py-7">
+          <div className="container grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: ShieldCheck,
+                title: 'Authentic & Pure',
+                sub: 'Checked for purity in Kolkata',
+              },
+              {
+                icon: Store,
+                title: 'Visit Our Kolkata Store',
+                sub: 'P-79 Swami Swarupananda Sarani',
+              },
+              {
+                icon: CreditCard,
+                title: 'UPI & Cash on Delivery',
+                sub: 'Razorpay & transparent COD',
+              },
+              {
+                icon: Truck,
+                title: 'Same-day Kolkata Delivery',
+                sub: 'Order by 2 pm · Free ≥ ₹499',
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="flex items-start gap-3">
+                  <Icon className="w-7 h-7 text-gold stroke-[1.4] shrink-0 mt-0.5" aria-hidden="true" />
+                  <div>
+                    <p className="text-sm font-semibold text-espresso leading-snug">{item.title}</p>
+                    <p className="text-xs text-walnut mt-0.5">{item.sub}</p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
-      {/* Full interactive temple bell garland replacing the gap before Shop by Collection */}
+      {/* Exactly ONE GhantaGarland between hero/trust strip and Shop by Collection */}
       <GhantaGarland variant="full" />
 
-      {/* 3. SHOP BY COLLECTION (8 Mandir Arch Tiles) - Padding above reduced to 48px (pt-12) */}
-      <section className="pt-12 pb-14 md:pb-24 bg-ivory" data-reveal>
+      {/* 3. SHOP BY COLLECTION (8 Mandir Arch Tiles) */}
+      <section className="pt-6 pb-12 md:pt-10 md:pb-16 lg:pb-24 bg-ivory" data-reveal>
         <div className="container">
           <SectionHeader
             eyebrow="SHOP BY COLLECTION"
@@ -275,7 +286,7 @@ export function HomePage() {
             subtitle="277 store essentials organized into eight quiet collections — from ₹20 roli to heirloom marble."
           />
 
-          <div className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             {collections.map((col) => (
               <Link
                 key={col.id}
@@ -290,10 +301,10 @@ export function HomePage() {
                     className="w-full h-full object-cover transition-transform duration-slow ease-temple group-hover:scale-105"
                   />
                 </div>
-                <h3 className="mt-3.5 font-cinzel text-xs md:text-[13px] font-semibold uppercase tracking-[0.16em] text-espresso group-hover:text-tulsi transition-colors">
+                <h3 className="mt-2 font-cinzel text-[11px] md:text-[13px] font-semibold uppercase tracking-[0.16em] text-espresso group-hover:text-tulsi transition-colors">
                   {col.name}
                 </h3>
-                <p className="text-xs text-walnut mt-0.5">{col.itemCount} essentials</p>
+                <p className="text-[12px] text-walnut mt-0.5">{col.itemCount} essentials</p>
               </Link>
             ))}
           </div>
@@ -302,7 +313,7 @@ export function HomePage() {
 
       {/* 4. UPCOMING FESTIVAL COUNTDOWN BAND */}
       {nextFestival && (
-        <section className="py-12 md:py-16 bg-parchment border-b border-hairline" data-reveal>
+        <section className="py-12 md:py-16 lg:py-24 bg-parchment border-b border-hairline" data-reveal>
           <div className="container">
             <div className="rounded-md border border-gold/40 bg-ivory p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-4 aspect-[4/3] arch-mask overflow-hidden bg-parchment border border-hairline">
@@ -378,7 +389,7 @@ export function HomePage() {
       )}
 
       {/* 5. BESTSELLERS CAROUSEL */}
-      <section className="py-14 md:py-24 bg-parchment/55 border-y border-hairline" data-reveal>
+      <section className="py-12 md:py-16 lg:py-24 bg-parchment/55 border-y border-hairline" data-reveal>
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
             <SectionHeader
@@ -434,7 +445,7 @@ export function HomePage() {
       </section>
 
       {/* 6. SANDALWOOD STORY SPLIT SECTION */}
-      <section className="py-14 md:py-24 bg-ivory" data-reveal>
+      <section className="py-12 md:py-16 lg:py-24 bg-ivory" data-reveal>
         <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-6">
             <div className="aspect-[4/5] max-w-md mx-auto arch-mask overflow-hidden border border-gold/40 bg-parchment shadow-card">
@@ -473,7 +484,7 @@ export function HomePage() {
       </section>
 
       {/* 7. PUJA KIT BUILDER TEASER (Tulsi Green Band) */}
-      <section className="py-14 md:py-20 bg-tulsi text-ivory" data-reveal>
+      <section className="py-12 md:py-16 lg:py-20 bg-tulsi text-ivory" data-reveal>
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <p className="font-cinzel text-xs font-semibold uppercase tracking-[0.3em] text-gold-light">
@@ -512,7 +523,7 @@ export function HomePage() {
       </section>
 
       {/* 8. ATTAR DISCOVERY */}
-      <section className="py-14 md:py-24 bg-ivory" data-reveal>
+      <section className="py-12 md:py-16 lg:py-24 bg-ivory" data-reveal>
         <div className="container">
           <SectionHeader
             eyebrow="TRADITIONAL ATTARS"
@@ -546,7 +557,7 @@ export function HomePage() {
       </section>
 
       {/* 9. VISIT OUR STORE (Kolkata) */}
-      <section className="py-14 md:py-24 bg-parchment border-y border-hairline" data-reveal>
+      <section className="py-12 md:py-16 lg:py-24 bg-parchment border-y border-hairline" data-reveal>
         <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-5">
             <div className="rounded-md overflow-hidden border border-hairline bg-ivory shadow-card">
@@ -605,7 +616,7 @@ export function HomePage() {
       </section>
 
       {/* 10. REVIEWS */}
-      <section className="py-14 md:py-24 bg-ivory" data-reveal>
+      <section className="py-12 md:py-16 lg:py-24 bg-ivory" data-reveal>
         <div className="container">
           <SectionHeader
             eyebrow="TRUSTED BY FAMILIES"
@@ -648,7 +659,7 @@ export function HomePage() {
       </section>
 
       {/* 11. JOURNAL */}
-      <section className="py-14 md:py-24 bg-parchment/50 border-t border-hairline" data-reveal>
+      <section className="py-12 md:py-16 lg:py-24 bg-parchment/50 border-t border-hairline" data-reveal>
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
             <SectionHeader
@@ -693,7 +704,7 @@ export function HomePage() {
       </section>
 
       {/* 12. FESTIVAL REMINDER BAND */}
-      <section className="py-14 md:py-20 bg-ivory border-t border-hairline" data-reveal>
+      <section className="py-12 md:py-16 lg:py-20 bg-ivory border-t border-hairline" data-reveal>
         <div className="container max-w-2xl text-center space-y-5">
           <p className="font-cinzel text-xs font-semibold uppercase tracking-[0.3em] text-gold">
             NEVER MISS A VRAT OR TITHI

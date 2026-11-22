@@ -17,9 +17,9 @@ export function AnnouncementBar() {
   }, []);
 
   return (
-    <div className="bg-tulsi text-ivory h-9 flex items-center justify-center px-4 text-center">
+    <div className="bg-tulsi text-ivory h-8 md:h-9 flex items-center justify-center px-4 text-center overflow-hidden">
       <p
-        className={`text-[12px] md:text-[13px] font-jakarta tracking-wide transition-opacity duration-base ${
+        className={`text-[12px] md:text-[13px] font-jakarta tracking-wide transition-opacity duration-base truncate whitespace-nowrap ${
           visible ? 'opacity-100' : 'opacity-0'
         }`}
       >
@@ -28,4 +28,3 @@ export function AnnouncementBar() {
     </div>
   );
 }
-
