@@ -19,9 +19,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   // Global IntersectionObserver for data-reveal scroll reveals
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll('[data-reveal]'));
-    if (els.length === 0) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -34,17 +31,32 @@ export function Layout({ children }: { children: React.ReactNode }) {
       { threshold: 0.1, rootMargin: '0px 0px -5% 0px' }
     );
 
-    els.forEach((el) => {
-      // If already in or above viewport on initial load, reveal immediately
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('is-visible');
-      } else {
-        observer.observe(el);
-      }
+    const checkAndObserve = () => {
+      const els = Array.from(document.querySelectorAll('[data-reveal]:not(.is-visible)'));
+      els.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        // If element is already in the viewport (or above it), reveal immediately
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-visible');
+        } else {
+          observer.observe(el);
+        }
+      });
+    };
+
+    checkAndObserve();
+
+    // Observe newly inserted DOM nodes (e.g. after async fetches or state updates)
+    const mutObserver = new MutationObserver(() => {
+      checkAndObserve();
     });
 
-    return () => observer.disconnect();
+    mutObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutObserver.disconnect();
+    };
   }, [pathname]);
 
   if (isAdmin) {

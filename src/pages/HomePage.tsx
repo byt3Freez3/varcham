@@ -32,7 +32,7 @@ import { Button } from '@/components/ui/button';
 import { BrandLogo, SectionHeader } from '@/components/BrandMark';
 import { ProductCard } from '@/components/ProductCard';
 import { ProductCardSkeleton } from '@/components/ui/skeleton';
-import { SHOW_TRUST_STRIP } from '@/config/home';
+import { SHOW_TRUST_STRIP, SHOW_UPCOMING_FESTIVAL_BANNER } from '@/config/home';
 import { GhantaGarland } from '@/components/GhantaGarland';
 
 const ATTAR_FAMILIES: Array<'All' | 'Floral' | 'Woody' | 'Fresh' | 'Musky'> = [
@@ -278,7 +278,7 @@ export function HomePage() {
       <GhantaGarland variant="full" />
 
       {/* 3. SHOP BY COLLECTION (8 Mandir Arch Tiles) */}
-      <section className="pt-6 pb-12 md:pt-10 md:pb-16 lg:pb-24 bg-ivory" data-reveal>
+      <section className="pt-6 pb-0 md:pt-10 md:pb-0 lg:pb-0 bg-ivory" data-reveal>
         <div className="container">
           <SectionHeader
             eyebrow="SHOP BY COLLECTION"
@@ -312,7 +312,7 @@ export function HomePage() {
       </section>
 
       {/* 4. UPCOMING FESTIVAL COUNTDOWN BAND */}
-      {nextFestival && (
+      {SHOW_UPCOMING_FESTIVAL_BANNER && nextFestival && (
         <section className="py-12 md:py-16 lg:py-24 bg-parchment border-b border-hairline" data-reveal>
           <div className="container">
             <div className="rounded-md border border-gold/40 bg-ivory p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -389,9 +389,9 @@ export function HomePage() {
       )}
 
       {/* 5. BESTSELLERS CAROUSEL */}
-      <section className="py-12 md:py-16 lg:py-24 bg-parchment/55 border-y border-hairline" data-reveal>
+      <section className="pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10 lg:pb-12 bg-parchment/55 border-y border-hairline" data-reveal>
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-10">
             <SectionHeader
               align="left"
               eyebrow="DEVOTED FAVOURITES"
@@ -421,9 +421,14 @@ export function HomePage() {
           </div>
 
           {loading ? (
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="flex gap-4 md:gap-6 overflow-hidden pb-2">
               {[1, 2, 3, 4].map((i) => (
-                <ProductCardSkeleton key={i} />
+                <div
+                  key={i}
+                  className="w-[72vw] sm:w-[46vw] md:w-[300px] shrink-0"
+                >
+                  <ProductCardSkeleton />
+                </div>
               ))}
             </div>
           ) : (
@@ -445,7 +450,7 @@ export function HomePage() {
       </section>
 
       {/* 6. SANDALWOOD STORY SPLIT SECTION */}
-      <section className="py-12 md:py-16 lg:py-24 bg-ivory" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-10 lg:pb-12 bg-ivory" data-reveal>
         <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-6">
             <div className="aspect-[4/5] max-w-md mx-auto arch-mask overflow-hidden border border-gold/40 bg-parchment shadow-card">
@@ -484,7 +489,7 @@ export function HomePage() {
       </section>
 
       {/* 7. PUJA KIT BUILDER TEASER (Tulsi Green Band) */}
-      <section className="py-12 md:py-16 lg:py-20 bg-tulsi text-ivory" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-10 lg:pb-12 bg-tulsi text-ivory" data-reveal>
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <p className="font-cinzel text-xs font-semibold uppercase tracking-[0.3em] text-gold-light">
@@ -523,7 +528,7 @@ export function HomePage() {
       </section>
 
       {/* 8. ATTAR DISCOVERY */}
-      <section className="py-12 md:py-16 lg:py-24 bg-ivory" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-10 lg:pb-12 bg-ivory" data-reveal>
         <div className="container">
           <SectionHeader
             eyebrow="TRADITIONAL ATTARS"
@@ -557,7 +562,7 @@ export function HomePage() {
       </section>
 
       {/* 9. VISIT OUR STORE (Kolkata) */}
-      <section className="py-12 md:py-16 lg:py-24 bg-parchment border-y border-hairline" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-10 lg:pb-12 bg-parchment border-y border-hairline" data-reveal>
         <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-5">
             <div className="rounded-md overflow-hidden border border-hairline bg-ivory shadow-card">
@@ -616,14 +621,14 @@ export function HomePage() {
       </section>
 
       {/* 10. REVIEWS */}
-      <section className="py-12 md:py-16 lg:py-24 bg-ivory" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-10 lg:pb-12 bg-ivory" data-reveal>
         <div className="container">
           <SectionHeader
             eyebrow="TRUSTED BY FAMILIES"
             title="Words from homes we serve"
           />
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {reviews.map((rev) => (
               <article
                 key={rev.id}
@@ -659,9 +664,9 @@ export function HomePage() {
       </section>
 
       {/* 11. JOURNAL */}
-      <section className="py-12 md:py-16 lg:py-24 bg-parchment/50 border-t border-hairline" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-8 md:pb-10 lg:pb-12 bg-parchment/50 border-t border-hairline" data-reveal>
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-10">
             <SectionHeader
               align="left"
               eyebrow="VARCHAM JOURNAL"
@@ -704,7 +709,7 @@ export function HomePage() {
       </section>
 
       {/* 12. FESTIVAL REMINDER BAND */}
-      <section className="py-12 md:py-16 lg:py-20 bg-ivory border-t border-hairline" data-reveal>
+      <section className="pt-8 md:pt-10 lg:pt-12 pb-10 md:pb-14 lg:pb-16 bg-ivory border-t border-hairline" data-reveal>
         <div className="container max-w-2xl text-center space-y-5">
           <p className="font-cinzel text-xs font-semibold uppercase tracking-[0.3em] text-gold">
             NEVER MISS A VRAT OR TITHI
